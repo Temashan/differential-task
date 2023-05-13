@@ -6,7 +6,7 @@ import glob
 
 directory = os.getcwd()
 
-D, v, dt, dx, T, L, Nx, Ny = list(map(float, input().split()))
+D, v, dt, T, L, Nx, Ny = list(map(float, input().split()))
 
 # Задаем параметры задачи
 # D = 0.1  # Коэффициент диффузии
@@ -23,6 +23,8 @@ dy = L / (Ny - 1)
 
 # Вычисляем количество временных шагов
 Nt = int(T / dt)
+Nx = int(Nx)
+Ny = int(Ny)
 
 # Создаем сетку для хранения концентрации
 c = np.zeros((Nt, Nx, Ny))
